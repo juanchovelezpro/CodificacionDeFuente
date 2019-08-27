@@ -330,7 +330,8 @@ public class Codificacion {
 
 		String binaryCodes = "";
 
-		for (int i = 0; i < frecuenciasHuffman.size(); i++) {
+		for (int i = frecuenciasHuffman.size()-1; i >=0; i--) {
+			
 
 			if (frecuenciasHuffman.get(i).isSencillo()) {
 
