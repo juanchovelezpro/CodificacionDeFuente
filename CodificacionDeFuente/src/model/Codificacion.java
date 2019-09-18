@@ -4,6 +4,7 @@ import java.util.*;
 
 /**
  * Codificacion de fuente. Huffman.
+ * 
  * @author juanchovelezpro
  *
  */
@@ -40,33 +41,6 @@ public class Codificacion {
 		crearInfoOrganizada();
 		huffman();
 
-	}
-
-	public char[] alfabetoInArray() {
-
-		char[] array = new char[alfabeto.size()];
-
-		for (int i = 0; i < alfabeto.size(); i++) {
-
-			array[i] = alfabeto.get(i);
-
-		}
-
-		return array;
-
-	}
-
-	public int[] frecuenciasInArray() {
-
-		int[] array = new int[frecuencias.size()];
-
-		for (int i = 0; i < frecuencias.size(); i++) {
-
-			array[i] = frecuencias.get(i);
-
-		}
-
-		return array;
 	}
 
 	public String getFrase() {
@@ -330,8 +304,7 @@ public class Codificacion {
 
 		String binaryCodes = "";
 
-		for (int i = frecuenciasHuffman.size()-1; i >=0; i--) {
-			
+		for (int i = frecuenciasHuffman.size() - 1; i >= 0; i--) {
 
 			if (frecuenciasHuffman.get(i).isSencillo()) {
 
@@ -359,18 +332,16 @@ public class Codificacion {
 
 		return "Mensaje: " + frase + "\n" + "Length mensaje: " + frase.length() + "\n" + alfabeto + "\n"
 				+ "Length Alfabeto: " + alfabeto.size() + "\n" + probabilidades + "\n" + probabilidadesString + "\n"
-				+ informacionesPropias + "\n" + "La entropia del mensaje es: " + entropiaMensaje + "\n"
-				+ infoOrganizada + "\n" + "Codigos Binarios con el arbol de codificacion de Huffman "+ "\n"+ getHuffmanBinaryCodes()+"\n"+"By: JuanchoVelezPro";
+				+ informacionesPropias + "\n" + "La entropia del mensaje es: " + entropiaMensaje + "\n" + infoOrganizada
+				+ "\n" + "Codigos Binarios con el arbol de codificacion de Huffman " + "\n" + getHuffmanBinaryCodes()
+				+ "\n" + "By: JuanchoVelezPro";
 
 	}
 
 	public static void main(String[] args) {
 
-		Codificacion code = new Codificacion("GASPAR GASTO GASEOSA A AMIGAS");
-
+		Codificacion code = new Codificacion("Melqui es gay gaysu");
 		System.out.println(code.toString());
-
-		
 
 	}
 
