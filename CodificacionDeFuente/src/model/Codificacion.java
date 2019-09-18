@@ -340,7 +340,7 @@ public class Codificacion {
 
 	public static void main(String[] args) {
 
-		Codificacion code = new Codificacion("Melqui es gay gaysu");
+		Codificacion code = new Codificacion("Pepper Clemens sent the messenger.");
 		System.out.println(code.toString());
 
 	}
