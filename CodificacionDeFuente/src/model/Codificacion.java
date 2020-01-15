@@ -40,6 +40,18 @@ public class Codificacion {
 		calcularEntropia();
 		crearInfoOrganizada();
 		huffman();
+		formato();
+
+	}
+
+	public void formato() {
+
+		for (int i = 0; i < probabilidades.size(); i++) {
+
+			probabilidades.set(i, Double.parseDouble(String.format("%.5f", probabilidades.get(i))));
+			informacionesPropias.set(i, Double.parseDouble(String.format("%.5f", informacionesPropias.get(i))));
+
+		}
 
 	}
 
@@ -112,8 +124,9 @@ public class Codificacion {
 		for (int i = 0; i < alfabeto.size(); i++) {
 
 			infoOrganizada += "\n" + "Simbolo: -> " + alfabeto.get(i) + "\n" + "Probabilidad: "
-					+ probabilidadesString.get(i) + "\n" + "Valor probabilidad: " + probabilidades.get(i) + "\n"
-					+ "Informacion Propia: " + informacionesPropias.get(i) + "\n"
+					+ probabilidadesString.get(i) + "\n" + "Valor probabilidad: "
+					+ String.format("%.5f", probabilidades.get(i)) + "\n" + "Informacion Propia: "
+					+ String.format("%.5f", informacionesPropias.get(i)) + "\n"
 					+ "--------------------------------------------------------------------" + "\n";
 
 		}
@@ -330,11 +343,12 @@ public class Codificacion {
 	@Override
 	public String toString() {
 
-		return "Mensaje: " + frase + "\n" + "Length mensaje: " + frase.length() + "\n" + alfabeto + "\n"
-				+ "Length Alfabeto: " + alfabeto.size() + "\n" + probabilidades + "\n" + probabilidadesString + "\n"
-				+ informacionesPropias + "\n" + "La entropia del mensaje es: " + entropiaMensaje + "\n" + infoOrganizada
-				+ "\n" + "Codigos Binarios con el arbol de codificacion de Huffman " + "\n" + getHuffmanBinaryCodes()
-				+ "\n" + "By: JuanchoVelezPro";
+		return "Mensaje: " + frase + "\n" + "Length mensaje: " + frase.length() + "\n" + "Alfabeto -> :" + alfabeto
+				+ "\n" + "Length Alfabeto: " + alfabeto.size() + "\n" + "Probabilidades: " + probabilidades + "\n"
+				+ "Probabilidades en fraccion: " + probabilidadesString + "\n" + "Informaciones Propias: "
+				+ informacionesPropias + "\n" + "La entropia del mensaje es: " + String.format("%.5f", entropiaMensaje)
+				+ "\n" + infoOrganizada + "\n" + "Codigos Binarios con el arbol de codificacion de Huffman " + "\n"
+				+ getHuffmanBinaryCodes() + "\n" + "By: JuanchoVelezPro";
 
 	}
 
